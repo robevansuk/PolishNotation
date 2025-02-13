@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,10 +23,7 @@ public class Calculator implements CalculatorInterface {
 
         int i = 2;
         while (buffer.size() != 1 && i < buffer.size()) {
-            if (!buffer.get(i).matches("\\+")
-                && !buffer.get(i).matches("-")
-                && !buffer.get(i).matches("\\*")
-                && !buffer.get(i).matches("/")) {
+            if (!buffer.get(i).matches("[\\+\\-\\*/]{1}")) {
                 i++;
                 continue;
             }
