@@ -30,6 +30,11 @@ class CalculatorTest {
 
     @Test
     void shouldCalculateResultOfMoreThanOneInstructionWithMultiplication() {
-        assertEquals(77l, testObject.calculate("3 4 + 5 6 + *")); // 3 - 4 + 5 = 4
+        assertEquals(77l, testObject.calculate("3 4 + 5 6 + *")); // 3 + 4 * 5 + 6 -> (3+4)*(5*6) -> 7 * 11 = 77
+    }
+
+    @Test
+    void shouldCalculateResultOfMoreThanOneInstructionWithSubtractionAndDivision() {
+        assertEquals(1l, testObject.calculate("3 4 - 5 6 - /")); // 3 - 4 / 5 - 6 = -1 / -1 = 1
     }
 }
